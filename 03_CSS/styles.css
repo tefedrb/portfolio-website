@@ -1,0 +1,656 @@
+body {
+    position: relative;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #fff;
+    /* background-color: rgb(0, 0, 0); */
+    /* linear-gradient(
+      black, black
+    ); */
+    overscroll-behavior: none;
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    transition: all .2s ease-in-out;
+}
+
+/*  #dev-portal-wrap {
+    min-height: 100%;
+    transition: all .5s ease-in;
+} */
+
+
+a {
+    text-decoration: none;
+    color: #000;
+    /* padding-bottom: 1px; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    transition: border .1s ease-in;
+}
+
+header nav a:hover {
+    border-bottom: 1px solid #000;
+}
+
+.development {
+  border-bottom: 1px solid #000;   
+}
+
+.filmmaking {
+    border-bottom: 0px solid #000;
+}
+
+header {
+    /* I turned overflow off because it was affecting
+    the pop-out video menu: it was hiding it */
+    /* overflow: hidden; */
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    color: #000;
+    background-color: #fff;
+    box-shadow: 0 1.9px 2.9px rgba(180, 180, 180, 0.438);
+}
+
+.expand {
+    background-color: #fff;
+    width: 100%;
+    height: 100px;
+}
+
+header h1 {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    padding: 5px;
+    width: 50px;   
+    height: 50px; 
+}
+
+header h2 {
+    position: absolute;
+    left: 75px;
+    display: inline-block;
+    text-shadow: 1px 1px 2px rgb(66, 66, 66);
+    font-weight: 700;
+    font-size: 32px;
+    padding-top: 5px;
+}
+
+#main-nav {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 12px;
+}
+
+.main-nav-a {
+    margin-right: 20px;
+    font-size: 15px;
+}
+
+/* FLYOUT MENU IN PROGRESS */
+
+.flyout-menu {
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    right: 0;
+    transform: translateX(100%);
+    height: 100vh;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: all .2s ease-in-out;  
+}
+
+.flyout-menu-out {
+    transform: translateX(0); 
+}
+
+.flyout-menu nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 32px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    left: 25%;
+    right: 50%;  
+}
+
+.flyout-menu nav a {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.ham-menu-click {
+    z-index: 100;
+    display: none;
+}
+
+#dev-portal-wrap {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all .2s ease-in-out;
+}
+
+#dev-portal {
+    justify-content: center;
+    font-size: 25px;
+    text-align: center;
+    height: 100%;
+    max-width: 800px;
+    color: black;
+    margin: 140px auto;   
+}
+
+#dev-portal p {
+    font-size: 16px;
+}
+
+#brief-bio {
+    margin-top: 30px;
+}
+
+#trainer-img {
+    cursor: pointer;
+    max-width: 500px;
+    border-radius: 7%;
+}
+
+#project-description {
+    text-decoration: underline;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#stack {
+    margin-top: 25px;
+    display: inline-block;
+    text-align: center;
+    max-height: 200px;
+    max-width: 500px;
+}
+
+#stack img {
+    max-width: 100px;
+    padding: 20px;
+    height: 100px;
+}
+
+#film-portal-wrap {
+    position: fixed;
+    transform: translate(100%, 0%);
+    opacity: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 4%;
+    padding-top: 4%;
+    margin: 0 auto;
+    transition: all .2s ease-in-out;  
+}
+
+#film-portal {
+    max-width: 1255px;
+    height: auto;
+    margin-top: 5%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    transition: all .2s ease-in-out;
+}
+
+
+
+#video-label {
+    transform: translateY(25px);
+}
+
+
+#video-intro {
+    padding: 5px;
+    text-align: center;
+}
+
+#video-intro video {
+    padding: 1px;
+    margin-top: 50px;
+    max-width: 700px;
+    height: auto;
+    border: solid .1px #fff;
+    box-shadow: 0px 0px 7px rgba(180, 180, 180, 0.438);
+}
+
+#editing-portal {
+    position: relative;
+    padding-bottom: 25px;
+    padding-top: 50px;
+    text-align: left;
+}
+
+#editing-portal h2 {
+    font-size: 2rem;
+    padding-bottom: 5px;
+}
+
+.video-category {
+    margin-right: 1em;
+    color: rgba(255, 255, 255, 0.74);
+    cursor: pointer;
+    padding-bottom: 5px;
+    transition: all .2s ease;
+}
+
+.video-category-selected {
+    color: gold;
+    font-size: 1.2rem;
+    padding-bottom: 5px;
+    margin-right: 1em;
+}
+
+.video-category:hover {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 1);
+}
+
+#slideshow {
+    overflow: hidden;
+    height: auto;
+    max-width: 1250px;
+    margin-top: 25px;
+    margin-bottom: 45px;
+}
+
+#outer-arrows {
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    width: 100%;
+    padding-top: 5px;
+    top: 85%;
+    left: 0;
+}
+
+#outer-arrows:hover {
+    opacity: 1;
+}
+
+#arrows {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#arrows img {
+    position: relative;
+    z-index: 2;
+    opacity: .6;
+    width: 40px;
+    height: 100%;
+    transition: opacity .1s ease-in;
+}
+
+/* Increased opacity when user mouse is on an arrow */
+#arrows img:hover {
+    opacity: 1;
+}
+
+/* Show arrows when users mouse is over slideshow */
+#slideshow:hover ~ #outer-arrows {
+    opacity: 1;
+}
+
+.slides-container {
+    position: relative;
+    display: block;
+    width: 2500px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: left 1s ease;
+}
+
+.slides-div {
+    margin-right: 5px;
+    float: left;
+    width: 400px;
+    height: 264px;
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.slides-p {
+    display: inline-block;
+    color: black;
+    font-size: 28px;
+    padding-top: 29%;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0px 3px 5px #ffe60046;
+    transition: all .3s;
+}
+
+#slides-RR div:hover p {
+    opacity: 1;
+}
+
+#slides-NFL div:hover p {
+    opacity: 1;
+}
+
+#slides-commercial div:hover p {
+    opacity: 1;
+}
+
+#slide1 {  
+    background-image: url("../01_IMAGES/Rhythm_Roulette_Thumbnails/RR_HitBoy_Thumbnail.png")
+}
+
+#slide2 {
+    background-image: url("../01_IMAGES/Rhythm_Roulette_Thumbnails/RR_Thumbnail_TomMisch_nologo.jpg");
+}
+
+#slide3 {
+    background-image: url("../01_IMAGES/Rhythm_Roulette_Thumbnails/RR_Supah-Mario_Thumbnail2.jpg");
+}
+
+#slide4 {
+    background-image: url("../01_IMAGES/Rhythm_Roulette_Thumbnails/RR_Thumbnail_DameGrease_nologo.jpg");
+}
+
+#slide5 {
+    background-image: url("../01_IMAGES/Rhythm_Roulette_Thumbnails/RR_Thumbnail_Swarvy_logo.jpg");
+}
+
+#slide6 {
+    background-image: url("../01_IMAGES/Rhythm_Roulette_Thumbnails/RR_Thumbnail_MrRogers_nologo.jpg");
+}
+
+#slide1-si {  
+    background-image: url("../01_IMAGES/SI_Thumbnails/MA-StudioInterview_JuicyJ.png");
+    background-position: left;
+}
+
+#slide2-si {
+    background-image: url("../01_IMAGES/SI_Thumbnails/MA-StudioInterview_DenzelCurry4_nologo.png");
+    background-position: left;  
+}
+
+#slide3-si {
+    background-image: url("../01_IMAGES/SI_Thumbnails/MA-StudioInterview_SwizzBeatz_nolgo.png");
+    background-position: left;
+}
+
+#slide4-si {
+    background-image: url("../01_IMAGES/SI_Thumbnails/MA-Thumbnail_WizKhalifa_nologo_new.png");
+    background-position: left;
+}
+
+#slide5-si {
+    background-image: url("../01_IMAGES/SI_Thumbnails/MA-StudioInterview_NipseyHussle_nologo.png");
+    background-position: left;
+}
+
+#slide6-si {
+    background-image: url("../01_IMAGES/SI_Thumbnails/MA-StudioInterview_lilBaby.png");
+    background-position: left;
+}
+
+#slide7-si {
+    background-image: url("../01_IMAGES/SI_Thumbnails/TheStudioInterview_DrOctagon__nologo.png");
+    background-position: left;
+}
+
+#slide1-com {  
+    background-image: url("../01_IMAGES/Commercial_Thumbnails/Hennessy.png")
+}
+
+#slide2-com {
+    background-image: url("../01_IMAGES/Commercial_Thumbnails/RemyMartin.png");
+}
+
+#slide3-com {
+    background-image: url("../01_IMAGES/Commercial_Thumbnails/YoungDolph.png");
+}
+
+#slide4-com {
+    background-image: url("../01_IMAGES/Commercial_Thumbnails/Stance.png");
+}
+
+#slide1-NFL {
+    background-image: url("../01_IMAGES/Commercial_Thumbnails/BrandonMarshall.png");
+}
+
+#slide2-NFL {
+    background-image: url("../01_IMAGES/Commercial_Thumbnails/GoldenTate.png");
+}
+
+#slide3-NFL {
+    background-image: url("../01_IMAGES/Commercial_Thumbnails/ChrisLong.png");
+}
+
+
+
+.slideshow-display-off {
+    display: none;
+    left: 0;
+}
+
+#slideCountContainer {
+    position: absolute;
+    text-align: center;
+    top: 86%;
+    left: 32%;
+    width: 440px;
+    height: 20px;
+}
+
+#slideProgressContainer {
+    width: 440px;
+    float: left;
+    border: 1px solid white;
+}
+
+#slideProgressBar {
+    float: left;
+    background-color: #FFD700;
+    height: 3px;
+    width: 0px;
+    transition: all 1s ease;
+}
+
+.displayOff {
+    opacity: 0;
+    cursor: inherit;
+}
+
+#lightbox-container {
+    display: none;
+}
+
+#lightbox-background {
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8;
+}
+
+#close-lightbox {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+#close-lightbox:hover img {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#close-lightbox img {
+    width: 25px;
+    height: 25px;
+    opacity: .8;
+}
+
+#lightbox-content {
+    z-index: 12;
+    position: fixed;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1093px;
+    height: 615px;
+    background-repeat: no-repeat;
+    transition: left 1s ease-in;
+}
+
+#lightbox-content iframe {
+    position: absolute;
+    top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#about-portal {
+    position: fixed;
+    opacity: 0;
+    overflow-x: hidden;
+    /* background-color: "#898B3B"; */
+    transform: translate(100%, 100%);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all .2s ease-in; 
+} 
+
+#inner-about-portal {
+    display: inline-block;
+    max-width: 500px;
+    padding: 25px;
+    margin: 0 auto;
+    transform: translateY(100%);
+}
+
+
+#contact-portal {
+    position: fixed;
+    opacity: 0;
+    /* background-color: "#CA9947"; */
+    overflow-x: hidden;
+    transform: translate(0%, 100%);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: all .2s ease-in; 
+} 
+
+#inner-contact-portal {
+    display: inline-block;
+    max-width: 500px;
+    height: auto;
+    padding: 25px;
+    margin: 0 auto;
+    transform: translateY(200%);
+}
+
+#inner-contact-portal img {
+    display: inline-block;
+    width: 6%;
+    margin-right: 1%;
+}
+
+#inner-contact-portal p {
+    margin-top: 5%;
+}
+
+#email {
+    font-style: bold;
+    color: black;
+    font-size: 1.5rem;
+}
+
+
+#email:hover {
+    cursor: pointer;
+    font-style: bold;
+}
+
+footer {
+    /* position: relative; */
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    height: 3.2rem;
+    background-color: #fff;
+    box-shadow: 0 -1.9px 2.9px rgba(180, 180, 180, 0.438);
+}
+
+footer img {
+    padding: 5px;
+    width: 50px;   
+    height: 50px; 
+}
+@media (max-height: 956px) {
+    .film-portal {
+        top: 50px;
+    }
+
+    footer {
+        height: 1.4rem;
+    }
+    
+    footer img {
+        display: none;
+    }
+}
+
+@media (max-width: 1050px) {
+    header nav {
+        display: none;
+    }
+
+    .ham-menu-click {
+        position: absolute;
+        display: inline-block;
+        top: 14px;
+        right: 20px;
+        z-index: 100;
+    }   
+}

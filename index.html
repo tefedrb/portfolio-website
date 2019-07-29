@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>TDRB Test Bench</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./03_CSS/base.css">
+        <link rel="stylesheet" type="text/css" href="./03_CSS/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Bai+Jamjuree:500|Press+Start+2P|Titillium+Web:600&display=swap" rel="stylesheet">
+    </head>
+       
+    <!-- Thinking of making a way to change the css of the page to a barebones theme - on the click of a button - code projects link -->
+    <!-- create .gifs with a transparent background? like ginlane website-->
+    <!-- create shading under buttons -->
+    <!-- create a game with random chances -->
+    <!-- create a game that pulls info from another site -->
+      
+    <body>
+        
+        <header>      
+            <!-- create a dynamic background that allows for floating elements / make it look like
+            background follows cursor -->
+            <h1>
+                <img src="01_IMAGES/Other_gfx/Logo2.png">
+            </h1>
+            <h2>Tefé Del Rosario-Bell</h2>
+            <nav id="main-nav">
+                <a class="development video main-nav-a" href="#">Development</a>              
+                <a class="filmmaking video main-nav-a" href="#">Filmmaking</a>
+                <a class="about-link main-nav-a" href="#">About</a>
+                <a class="contact-link main-nav-a" href="#">Contact</a>
+            </nav>
+            <a href="#" class="ham-menu-click"> 
+                <img src="01_IMAGES/Other_gfx/menu-icon.svg">
+            </a>
+        </header>
+        
+        <section class="flyout-menu">
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </section>
+    
+       
+
+        <section id="dev-portal-wrap">
+            <div id="dev-portal">
+                <h3>Software Engineering</h3>
+                <p id="brief-bio">
+                        Since 2011 I've been working as a filmmaker and video editor.
+                    <br>
+                        It wasn't until I began working in a production environment, dealing with the intricacies 
+                    <br>
+                        of telling visual stories on a granular level as an editor, that my curiousity for
+                        programming was reignited.
+                    <br>
+                        In 2019 I've fully immersed myself in the land of Web Development and have found an exciting new trajectory.
+                    <br>
+                        I am hoping to merge the worlds of filmmaking and software development in the future.
+                </p>
+                <div id="stack">      
+                    <img src="01_IMAGES/Body_gfx/HTML5_Logo_black.png">
+                    <img src="01_IMAGES/Body_gfx/CSS_Logo_black.png">
+                    <img src="01_IMAGES/Body_gfx/JS_Logo_black.png">
+                </div>
+                <p id="project-description">
+                    My first HTML / CSS / Javascript project - the very best Multiplication Trainer
+                </p>
+                <img id="trainer-img" src="01_IMAGES/Body_gfx/ProjectWindowTrainer.png">
+            </div>
+        </section>
+
+        <section id="film-portal-wrap">
+            <div id="film-portal">
+                <div id="video-intro">
+                    <p id="video-label">Showreel 2016</p>
+                    <video src="02_VIDEO/Showreel_2016.mp4" alt="Tefe's Reel" controls></video>
+                </div>
+                <div id="editing-portal">
+                        <h2>Editing Portfolio</h2>
+                        <a id="rr-link" class="video-category-selected">Mass Appeal: Rhythm Roulette</a>
+                        <a id="si-link" class="video-category">Mass Appeal: Studio Interview</a>  
+                        <a id="NFL-link" class="video-category">National Football League</a>
+                        <a id="commercial-link" class="video-category">Commercial Work</a>             
+                    <div id="slideshow">                                               
+                        <div id="slides-commercial" class="slides-container slideshow-display-off">
+                            <div id="slide1-com" class="slides-div" alt="Hennesy" data-link="https://www.youtube.com/embed/g8UDQ1a_Su4">
+                                <p class="slides-p">Hennesy</p>
+                            </div>
+                            <div id="slide2-com" class="slides-div" alt="Rémy_Martin" data-link="https://www.youtube.com/embed/B8qjXRCVwC0">
+                                <p class="slides-p">Rémy Martin</p>
+                            </div>
+                            <div id="slide3-com" class="slides-div" alt="Young_Dolph" data-link="https://www.youtube.com/embed/yhzQyrnVvtc">
+                                <p class="slides-p">Young Dolph</p>
+                            </div>
+                            <div id="slide4-com" class="slides-div" alt="Stance_Socks" data-link="https://www.youtube.com/embed/sfd0qe1QYGs">
+                                <p class="slides-p">Stance Socks</p>
+                            </div>
+                        </div> 
+
+                        <div id="slides-NFL" class="slides-container slideshow-display-off">
+                            <div id="slide1-NFL" class="slides-div" alt="Brandon_Marshall" data-link="https://www.youtube.com/embed/6wnSkkDzrLc">
+                                <p class="slides-p">Brandon Marshall</p>
+                            </div>
+                            <div id="slide2-NFL" class="slides-div" alt="Golden_Tate" data-link="https://www.youtube.com/embed/ABHP8iRzmiA">
+                                <p class="slides-p">Golden Tate</p>
+                            </div>
+                            <div id="slide3-NFL" class="slides-div" alt="Chris_Long" data-link="https://www.youtube.com/embed/mIRcTDZj7I0">
+                                <p class="slides-p">Chris Long</p>
+                            </div>
+                        </div> 
+                        <div id="slides-RR" class="slides-container">
+                            <div id="slide1" class="slides-div" alt="Hit_Boy" data-link="https://www.youtube.com/embed/qWLglMGm4QQ">
+                                <p class="slides-p">Hit-Boy</p>
+                            </div>
+                            <div id="slide2" class="slides-div" alt="Tom_Misch" data-link="https://www.youtube.com/embed/9Y0FsLaEiPY">
+                                <p class="slides-p">Tom Misch</p>
+                            </div>
+                            <div id="slide3" class="slides-div" alt="Supah_Mario" data-link="https://www.youtube.com/embed/W7GWy5Ok-oU">
+                                <p class="slides-p">Supah Mario</p>
+                            </div>
+                            <div id="slide4" class="slides-div" alt="Dame_Grease" data-link="https://www.youtube.com/embed/OhDQV0U-ty8">
+                                <p class="slides-p">Dame Grease</p>
+                            </div>
+                            <div id="slide5" class="slides-div" alt="Swarvy" data-link="https://www.youtube.com/embed/pkbvuG2rcyg">
+                                <p class="slides-p">Swarvy</p>
+                            </div>
+                            <div id="slide6" class="slides-div" alt="DJ_Mr._Rogers" data-link="https://www.youtube.com/embed/FYgGQSsY6Cc">
+                                <p class="slides-p">DJ Mr. Rogers</p>
+                            </div>
+                        </div>
+                        <div id="slides-si" class="slides-container slideshow-display-off">
+                            <div id="slide1-si" class="slides-div" alt="Juicy_J" data-link="https://www.youtube.com/embed/rWeN9OQnRyI">
+                                <p class="slides-p">Juicy J</p>
+                            </div>
+                            <div id="slide2-si" class="slides-div" alt="Denzel_Curry" data-link="https://www.youtube.com/embed/utZR_YOcdGw">
+                                <p class="slides-p">Denzel Curry</p>
+                            </div>
+                            <div id="slide3-si" class="slides-div" alt="Swizz_Beatz" data-link="https://www.youtube.com/embed/7io0ZrdG1mI">
+                                <p class="slides-p">Swizz Beatz</p>
+                            </div>
+                            <div id="slide4-si" class="slides-div" alt="Wiz_Khalifa" data-link="https://www.youtube.com/embed/oy4Z1ZY2RB0">
+                                <p class="slides-p">Wiz Khalifa</p>
+                            </div>
+                            <div id="slide5-si" class="slides-div" alt="Nipsey_Hussle" data-link="https://www.youtube.com/embed/lPHuZLM72U4">
+                                <p class="slides-p">Nipsey Hussle</p>
+                            </div>
+                            <div id="slide6-si" class="slides-div" alt="Lil_Baby" data-link="https://www.youtube.com/embed/JSPxY-fOswA">
+                                <p class="slides-p">Lil Baby</p>
+                            </div>
+                            <div id="slide7-si" class="slides-div" alt="Dr_Octagon" data-link="https://www.youtube.com/embed/Q4mN7jrxXBM">
+                                <p class="slides-p">Dr. Octagon</p>
+                            </div>
+                        </div>                 
+                    </div> 
+                    <span id="outer-arrows">
+                        <span id="arrows">
+                            <a href="" class="arrow-back">
+                                <img src="01_IMAGES/Other_gfx/Left_Arrow_1.svg">
+                            </a> 
+                            <a href="" class="arrow-forward">
+                                <img src="01_IMAGES/Other_gfx/Right_Arrow_2.svg">
+                            </a>    
+                        </span>  
+                    </span>
+                    <div id="slideCountContainer">
+                        <span id="slideProgress">0%</span>
+                        <div id="slideBarContainer">
+                            <div id="slideProgressBar"></div>
+                        </div>
+                    </div>   
+                </div>          
+            </div>
+        </section>
+
+        <div id="lightbox-container">
+            <div id="lightbox-background">                
+                <span id="close-lightbox">
+                    <img src="01_IMAGES/Other_gfx/X.svg">
+                </span>                          
+            </div>                          
+            <div id="lightbox-content"></div>         
+        </div>
+
+        <section id="about-portal">
+            <div id="inner-about-portal">
+                <p>
+                    Since Janurary of 2019, Ive been teaching myself web development, starting with an 8-week 
+                    online course from SuperHi called "Foundation HTML, CSS & Javascript." Since the course I haven't stopped
+                    learning, and have been steadily growing into an autonomous problem solver with a focus on functional programming 
+                    utilizing vanilla JavaScript.
+                <br>
+                <br>
+                    As a former full-time video editor, I would spend the majority 
+                    of my day in front of a computer, molding a story using video and audio media.
+                    What I enjoyed the most, was seeing the end product and knowing that I played a role in
+                    curating the experience of the viewer. I believe these skills will not only
+                    strengthen my capacity as a creator, but also satisfy my zeal for understanding patterns
+                    and problem solving.
+                </p>
+            </div>
+        </section>
+        <section id="contact-portal">
+            <div id="inner-contact-portal">
+                
+                <p id="email">
+                    tefebell@gmail.com
+                </p>
+                (click email to copy)
+                <p>  
+                    <img src="01_IMAGES/Other_gfx/LinkedIn.png">
+                    <a href="https://www.linkedin.com/in/tefedrb" target="blank">linkedin.com/tefedrb</a>
+                </p>
+                
+            </div>
+        </section>
+        <footer>
+            <img src="01_IMAGES/Other_gfx/Logo2.png">
+            <nav></nav>
+        </footer>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="04_JS/slideshow.js"></script>
+        <script type="text/javascript" src="04_JS/generalActions.js"></script>
+    </body>
+</html>
