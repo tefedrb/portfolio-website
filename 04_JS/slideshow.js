@@ -43,12 +43,11 @@ slideShowInfo.slideshow.style.width = `${slideShowInfo.slideShowWidth()}px`
 
 const calPxSlideLimit = (slidesInView, marginOffSet) => {
     const slideWidth = parseInt(slideShowInfo.getSlideWidth()) + marginOffSet;
-    console.log(slideWidth, 'slide width')
     const inViewPx = slideWidth * slidesInView;
-    console.log(inViewPx, 'inViewPx')
-    const pxSlideLimit = slideShowInfo.slideShowWidth() - (inViewPx + slideWidth);  
-    console.log(pxSlideLimit, 'pxSlideLimit')
-    return pxSlideLimit * -1;
+    let pxSlideLimit = slideShowInfo.slideShowWidth() - inViewPx; 
+    return Math.sign(pxSlideLimit) === 1 ? pxSlideLimit * -1 : 
+    Math.sign(pxSlideLimit) === -1 ? pxSlideLimit :
+    Math.sign(pxSlideLimit) === 0 ? slideWidth * -1 : null
 }
 
 const numOfSlides = (parentElementRef) => {
@@ -95,8 +94,8 @@ const displaySlideCount = () => {
 
 
 const nextSlideR = function() { 
-    $('a.arrow-back').removeClass('displayOff');
-    if(slideProgressPercent.innerHTML === '100%') return;  
+    if(slideProgressPercent.innerHTML === '100%') return; 
+    $('a.arrow-back').removeClass('displayOff'); 
     slideShowInfo.pxSlide += parseInt(slideShowInfo.getSlideWidth()) * -1 -5;
     $(slideShowInfo.slideshow).css('left', slideShowInfo.pxSlide + "px");
     if (slideShowInfo.pxSlide === calPxSlideLimit){ 
@@ -106,8 +105,8 @@ const nextSlideR = function() {
 }
 
 const nextSlideL = function() {   
+    if(slideProgressPercent.innerText === '0%') return;
     $('a.arrow-forward').removeClass('displayOff');
-    if(slideProgressPercent.innerHTML === '0%') return;
     slideShowInfo.pxSlide += parseInt(slideShowInfo.getSlideWidth()) + 5
     $(slideShowInfo.slideshow).css('left', slideShowInfo.pxSlide + "px")
     if(slideShowInfo.pxSlide === 0) {
@@ -154,6 +153,8 @@ editingPortal.addEventListener('click', (e)=>{
     if(e.target === commercialWorkLink){
         modifyClassList(e.target.parentNode.children, 'video-category-selected');
         modifyClassList(e.target.parentNode.children, 'video-category', 'add');
+        console.log(e.target.parentNode, 'htmllist com-work')
+        console.log(e.target, 'htmllist com-work')
         e.target.classList.remove('video-category');
         e.target.classList.add('video-category-selected');
         $('a.arrow-back').addClass('displayOff');
@@ -169,6 +170,8 @@ editingPortal.addEventListener('click', (e)=>{
     if(e.target === rrWorkLink){
         modifyClassList(e.target.parentNode.children, 'video-category-selected');
         modifyClassList(e.target.parentNode.children, 'video-category', 'add');
+        console.log(e.target.parentNode, 'htmllist rr-work');
+        console.log(e.target, 'htmllist rr-work');
         e.target.classList.remove('video-category');
         e.target.classList.add('video-category-selected');
         $('a.arrow-back').addClass('displayOff');
@@ -184,6 +187,8 @@ editingPortal.addEventListener('click', (e)=>{
     if(e.target === nflLink){
         modifyClassList(e.target.parentNode.children, 'video-category-selected');
         modifyClassList(e.target.parentNode.children, 'video-category', 'add');
+        console.log(e.target.parentNode, 'htmllist nfl-work');
+        console.log(e.target, 'htmllist nfl-work');
         e.target.classList.remove('video-category');
         e.target.classList.add('video-category-selected');
         $('a.arrow-back').addClass('displayOff');
@@ -199,6 +204,8 @@ editingPortal.addEventListener('click', (e)=>{
     if(e.target === siLink){
         modifyClassList(e.target.parentNode.children, 'video-category-selected');
         modifyClassList(e.target.parentNode.children, 'video-category', 'add');
+        console.log(e.target.parentNode, 'si-work');
+        console.log(e.target, 'si-work');
         e.target.classList.remove('video-category');
         e.target.classList.add('video-category-selected');
         $('a.arrow-back').addClass('displayOff');

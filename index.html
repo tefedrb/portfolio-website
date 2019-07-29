@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>TDRB Test Bench</title>
+        <title>TDRB Media</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="./03_CSS/base.css">
@@ -22,7 +22,6 @@
     <!-- create a game that pulls info from another site -->
       
     <body>
-        
         <header>      
             <!-- create a dynamic background that allows for floating elements / make it look like
             background follows cursor -->
@@ -39,18 +38,15 @@
             <a href="#" class="ham-menu-click"> 
                 <img src="01_IMAGES/Other_gfx/menu-icon.svg">
             </a>
+            <section class="flyout-menu">
+                <nav>
+                    <a class="development" href="#">Development</a>
+                    <a class="filmmaking" href="#">Filmmaking</a>
+                    <a class="about-link" href="#">About</a>
+                    <a class="contact-link" href="#">Contact</a>
+                </nav>
+            </section>
         </header>
-        
-        <section class="flyout-menu">
-            <nav>
-                <a href="home.html">Home</a>
-                <a href="projects.html">Projects</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </section>
-    
-       
 
         <section id="dev-portal-wrap">
             <div id="dev-portal">
@@ -82,15 +78,17 @@
         <section id="film-portal-wrap">
             <div id="film-portal">
                 <div id="video-intro">
-                    <p id="video-label">Showreel 2016</p>
+                    <p id="video-label">Producer/Shooter/Editor Showreel 2016</p>
                     <video src="02_VIDEO/Showreel_2016.mp4" alt="Tefe's Reel" controls></video>
                 </div>
                 <div id="editing-portal">
                         <h2>Editing Portfolio</h2>
-                        <a id="rr-link" class="video-category-selected">Mass Appeal: Rhythm Roulette</a>
-                        <a id="si-link" class="video-category">Mass Appeal: Studio Interview</a>  
-                        <a id="NFL-link" class="video-category">National Football League</a>
-                        <a id="commercial-link" class="video-category">Commercial Work</a>             
+                        <div>
+                            <a id="rr-link" class="video-category-selected">Mass Appeal: Rhythm Roulette</a>
+                            <a id="si-link" class="video-category">Mass Appeal: Studio Interview</a>  
+                            <a id="NFL-link" class="video-category">National Football League</a>
+                            <a id="commercial-link" class="video-category">Commercial Work</a>
+                        </div>             
                     <div id="slideshow">                                               
                         <div id="slides-commercial" class="slides-container slideshow-display-off">
                             <div id="slide1-com" class="slides-div" alt="Hennesy" data-link="https://www.youtube.com/embed/g8UDQ1a_Su4">
@@ -209,9 +207,9 @@
                 </p>
             </div>
         </section>
+
         <section id="contact-portal">
-            <div id="inner-contact-portal">
-                
+            <div id="inner-contact-portal">  
                 <p id="email">
                     tefebell@gmail.com
                 </p>
@@ -220,13 +218,14 @@
                     <img src="01_IMAGES/Other_gfx/LinkedIn.png">
                     <a href="https://www.linkedin.com/in/tefedrb" target="blank">linkedin.com/tefedrb</a>
                 </p>
-                
             </div>
         </section>
+
         <footer>
             <img src="01_IMAGES/Other_gfx/Logo2.png">
             <nav></nav>
         </footer>
+        
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script type="text/javascript" src="04_JS/slideshow.js"></script>
         <script type="text/javascript" src="04_JS/generalActions.js"></script>

@@ -15,16 +15,9 @@ body {
     transition: all .2s ease-in-out;
 }
 
-/*  #dev-portal-wrap {
-    min-height: 100%;
-    transition: all .5s ease-in;
-} */
-
-
 a {
     text-decoration: none;
     color: #000;
-    /* padding-bottom: 1px; */
     border-bottom: 1px solid rgba(0, 0, 0, 0);
     transition: border .1s ease-in;
 }
@@ -164,8 +157,14 @@ header h2 {
 
 #trainer-img {
     cursor: pointer;
+    opacity: .8;
     max-width: 500px;
     border-radius: 7%;
+    transition: all .2s ease-in-out;
+}
+
+#trainer-img:hover {
+    opacity: 1;
 }
 
 #project-description {
@@ -282,7 +281,7 @@ header h2 {
     position: absolute;
     z-index: 2;
     opacity: 0;
-    width: 100%;
+    width: 99.7%;
     padding-top: 5px;
     top: 85%;
     left: 0;
@@ -353,15 +352,7 @@ header h2 {
     transition: all .3s;
 }
 
-#slides-RR div:hover p {
-    opacity: 1;
-}
-
-#slides-NFL div:hover p {
-    opacity: 1;
-}
-
-#slides-commercial div:hover p {
+.slides-p:hover {
     opacity: 1;
 }
 
@@ -452,8 +443,6 @@ header h2 {
     background-image: url("../01_IMAGES/Commercial_Thumbnails/ChrisLong.png");
 }
 
-
-
 .slideshow-display-off {
     display: none;
     left: 0;
@@ -484,7 +473,7 @@ header h2 {
 
 .displayOff {
     opacity: 0;
-    cursor: inherit;
+    cursor: not-allowed;
 }
 
 #lightbox-container {
@@ -641,7 +630,7 @@ footer img {
     }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 628px) {
     header nav {
         display: none;
     }

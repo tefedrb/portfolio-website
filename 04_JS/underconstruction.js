@@ -11,7 +11,7 @@ const blink = () => {
 }
 
 const ttyl = () => {
-    let text = `Well HELLO THERE. This is a bit awkward... come back later k?`
+    let text = `UNDER CONSTRUCTION... type findpage() into the console to see the progress`
     let i = 0;
     const runme = () => {  
         document.querySelector('.text').innerHTML += text[i]
