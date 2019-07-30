@@ -117,6 +117,7 @@ const nextSlideL = function() {
 
 const exitLightBox = () => {
     $('#lightbox-container').fadeOut(500)
+    console.log('exit')
 }
 
 $('a.arrow-forward').on('click', function(e) {
