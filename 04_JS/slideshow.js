@@ -16,6 +16,16 @@ const siLink = document.querySelector('#si-link');
 const editingPortal = document.querySelector('#editing-portal');
 const closeBoxElement = document.querySelector('#close-lightbox');
 
+/* const actionsForMobile = () => {
+    if(document) return;
+    if(window.innerWidth > 480) return;
+     slideShowInfo.slideshow.style.width = '100%';
+     slideShowInfo.slideshow.style.textAlign = 'center'
+     const slidesArr = Array.from(slideShowInfo.slideshow.children);
+     slidesArr.forEach(i => i.style.display = 'inline-block');
+     slidesArr.forEach(i => i.style.float = 'none');
+}; */
+
 const slideShowInfo = {
     slide: document.querySelector('#slides-RR div'),
     slideshow: document.querySelector('#slides-RR'),
@@ -39,7 +49,7 @@ const slideShowInfo = {
 }
 
 $('a.arrow-back').addClass('displayOff')
-slideShowInfo.slideshow.style.width = `${slideShowInfo.slideShowWidth()}px`
+slideShowInfo.slideshow.style.width = `${slideShowInfo.slideShowWidth()}px`;
 
 const calPxSlideLimit = (slidesInView, marginOffSet) => {
     const slideWidth = parseInt(slideShowInfo.getSlideWidth()) + marginOffSet;
@@ -171,8 +181,6 @@ editingPortal.addEventListener('click', (e)=>{
     if(e.target === rrWorkLink){
         modifyClassList(e.target.parentNode.children, 'video-category-selected');
         modifyClassList(e.target.parentNode.children, 'video-category', 'add');
-        console.log(e.target.parentNode, 'htmllist rr-work');
-        console.log(e.target, 'htmllist rr-work');
         e.target.classList.remove('video-category');
         e.target.classList.add('video-category-selected');
         $('a.arrow-back').addClass('displayOff');
@@ -188,8 +196,6 @@ editingPortal.addEventListener('click', (e)=>{
     if(e.target === nflLink){
         modifyClassList(e.target.parentNode.children, 'video-category-selected');
         modifyClassList(e.target.parentNode.children, 'video-category', 'add');
-        console.log(e.target.parentNode, 'htmllist nfl-work');
-        console.log(e.target, 'htmllist nfl-work');
         e.target.classList.remove('video-category');
         e.target.classList.add('video-category-selected');
         $('a.arrow-back').addClass('displayOff');
@@ -205,8 +211,6 @@ editingPortal.addEventListener('click', (e)=>{
     if(e.target === siLink){
         modifyClassList(e.target.parentNode.children, 'video-category-selected');
         modifyClassList(e.target.parentNode.children, 'video-category', 'add');
-        console.log(e.target.parentNode, 'si-work');
-        console.log(e.target, 'si-work');
         e.target.classList.remove('video-category');
         e.target.classList.add('video-category-selected');
         $('a.arrow-back').addClass('displayOff');
@@ -227,5 +231,7 @@ editingPortal.addEventListener('click', (e)=>{
         $('#lightbox-container').fadeIn(700);
     }
 })
+
+
 
 

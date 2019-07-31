@@ -81,7 +81,7 @@ header h1 img {
 
 header h2 {
     position: absolute;
-    left: 75px;
+    left: 20%;
     display: inline-block;
     text-shadow: 1px 1px 2px rgb(66, 66, 66);
     font-weight: 700;
@@ -110,7 +110,7 @@ header h2 {
     right: 0;
     transform: translateX(100%);
     height: 100vh;
-    width: 300px;
+    width: 100vw;
     background-color: rgba(255, 255, 255, 0.8);
     transition: all .2s ease-in-out;  
 }
@@ -123,7 +123,8 @@ header h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 32px;
+    text-decoration: none;
+    font-size: 2rem;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -149,16 +150,16 @@ header h2 {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    transition: all .2s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
 #dev-portal {
-    justify-content: center;
     font-size: 25px;
-    text-align: center;
-    height: 100%;
-    max-width: 800px;
     color: black;
+    max-width: 800px;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
     margin: 140px auto;   
 }
 
@@ -167,7 +168,7 @@ header h2 {
 }
 
 #brief-bio {
-    margin-top: 30px;
+    margin-top: 2%;
 }
 
 #trainer-img {
@@ -188,6 +189,7 @@ header h2 {
     font-size: 20px;
     margin-top: 25px;
     margin-bottom: 10px;
+    padding: 4%;
 }
 
 #stack {
@@ -218,20 +220,18 @@ header h2 {
     padding-bottom: 4%;
     padding-top: 4%;
     margin: 0 auto;
-    transition: all .2s ease-in-out;  
+    transition: all .5s ease-in-out;  
 }
 
 #film-portal {
     max-width: 1255px;
     height: auto;
     margin-top: 5%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 1.55%;
+    padding-right: 1.55%;
     margin: 0 auto;
-    transition: all .2s ease-in-out;
+    transition: all .5s ease-in-out;
 }
-
-
 
 #video-label {
     transform: translateY(25px);
@@ -317,7 +317,7 @@ header h2 {
     position: relative;
     z-index: 2;
     opacity: .6;
-    width: 40px;
+    width: 30px;
     height: 100%;
     transition: opacity .1s ease-in;
 }
@@ -557,7 +557,7 @@ header h2 {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    transition: all .2s ease-in; 
+    transition: all .5s ease-in-out; 
 } 
 
 #inner-about-portal {
@@ -581,7 +581,7 @@ header h2 {
     left: 0;
     right: 0;
     margin: 0 auto;
-    transition: all .2s ease-in; 
+    transition: all .5s ease-in-out; 
 } 
 
 #inner-contact-portal {
@@ -608,7 +608,6 @@ header h2 {
     color: black;
     font-size: 1.5rem;
 }
-
 
 #email:hover {
     cursor: pointer;
@@ -640,7 +639,7 @@ footer p {
     bottom: 30%;
     float: right;
 }
-@media (max-height: 956px) {
+@media (max-height: 825px) {
     .film-portal {
         top: 50px;
     }
@@ -648,14 +647,86 @@ footer p {
     footer {
         height: 1.4rem;
     }
-    
+
+    footer p {
+        font-size: .5rem;
+    }
+
     footer img {
         display: none;
     }
 }
 
-@media (max-width: 628px) {
+.video-category {
+    font-size: .8rem;
+}
+
+.video-category-selected {
+    font-size: .8rem;
+}
+
+
+@media (max-width: 754px) {
     header nav {
+        display: none;
+    }
+
+    #slideshow {
+        position: relative;
+        display: flex;
+        height: auto;
+        max-width: 100%;
+        margin-top: 25px;
+        margin-bottom: 45px;
+    }
+
+
+    #film-portal-wrap {
+        /* allows for full stretch of background */
+        height: 100%;
+        overflow: scroll;
+    }
+
+    #slideshow div {
+        width: 200px;
+        height: auto;
+    }
+
+    #outer-arrows {
+        display: none;
+    }
+
+    #video-intro video {
+        width: 400px;
+        height: auto;
+    }
+
+    footer {
+        height: 1.4rem;
+    }
+
+    footer p {
+        font-size: .5rem;
+    }
+
+
+    #slides-commercial {
+
+    }
+
+    #slides-NFL {
+
+    }
+
+    #slides-RR {
+
+    }
+
+    #slides-si {
+
+    }
+
+    #slideCountContainer {
         display: none;
     }
 
@@ -666,4 +737,93 @@ footer p {
         right: 20px;
         z-index: 100;
     }   
+}
+
+@media (max-width: 628px) {
+    
+    header h2 {
+        margin-top: 1.3%;
+        font-size: 1.5rem;
+    }
+
+    #editing-portal h2 {
+        font-size: 1.2rem;
+    }
+
+    #dev-portal {
+        margin: 30% auto;
+    }
+
+    /* #brief-bio {
+        padding: 15%;
+    } */
+
+    #stack {
+        margin-top: 0;
+    }
+
+    #trainer-img {
+        max-width: 100%;
+    }
+    
+    #brief-bio {
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-bottom: 8%;
+    }
+
+    #video-intro video {
+        width: 100%;
+        height: auto;
+    }
+
+    #slideshow {
+        text-align: center;
+    }
+
+    .slides-div {
+        display: inline-block;
+        float: none;
+        width: 200px;
+        height: auto;
+        margin-bottom: 7%;
+        opacity: .9;
+        text-align: center;
+    }
+
+    #film-portal-wrap {
+        top: 5%;
+    }
+
+    #editor-profile-links a {
+        display: block;
+    }
+
+    .slides-p {
+        opacity: 1;
+        color: white;
+        background-color: transparent;
+    }
+
+    #inner-about-portal {
+        transform: translateY(15%);
+    }
+
+    #inner-contact-portal {
+        transform: translateY(90%);
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .ham-menu-click {
+        position: absolute;
+        overflow: hidden;
+        display: inline-block;
+        top: 14px;
+        right: 20px;
+        z-index: 100;
+    }   
+
 }
