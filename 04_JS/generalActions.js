@@ -22,14 +22,40 @@ const headerLogoFilm = document.querySelector('#logo-film');
 const headerLogoAbout = document.querySelector('#logo-about');
 const headerLogoContact = document.querySelector('#logo-contact');
 const slideShowArray = Array.from(document.querySelector('#slideshow').children);
-
+const video = document.querySelector('video');
 
 const copyToClipboard = (email) => {
     let tempInput = document.createElement('input');
     tempInput.value = email.innerText
     body.appendChild(tempInput).select();
     document.execCommand('copy');
-}
+};
+
+const realignWindow = (positionY, duration) => {
+    // Thanks to gizma.com/easing formulas and Dev Ed (youtube channel) for inspiring this function
+    if(window.scrollY === positionY) return;
+    const currentScroll = window.scrollY;
+    let distance;  
+    let startTime = null;
+    const ease = (t, b, c, d) =>{
+        return c*t/d + b;
+    }; 
+
+    currentScroll > positionY ? distance = (currentScroll - positionY) * -1:
+    distance = positionY;
+
+    const animation = (currentTime) =>{
+        if(startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+         // To use easeInOutCubic to scroll - using window.scrollTo()
+         const easeInOut = ease(timeElapsed, currentScroll, distance, duration);
+         window.scrollTo(0, easeInOut);
+         //base case - compare timeElapsed to duration
+        if(duration > timeElapsed) requestAnimationFrame(animation);
+    };
+
+    requestAnimationFrame(animation);
+};
 
 const linksArray = () => {
     let mainNavLinks = document.querySelector('#main-nav').children
@@ -40,19 +66,24 @@ const linksArray = () => {
         }
     }
     return returnArr
-}
+};
 
 const shiftContent = (element, transX, transY, position) => {
-    let translate = `translate(0%, ${transX})`;
+    realignWindow(0, 500)
+    setTimeout(function(){
+        let translate = `translateX(${transX})`;
     if(transY && transX){
         translate = `translate(${transX}, ${transY})`;
     } else if(transY){
         translate = `translate(0%, ${transY})`;
     }
-    if(position){
-        element.style.position = position;
-    }
     element.style.transform = translate;
+    }, 250)
+    if(position){
+        setTimeout(function(){
+            element.style.position = position;
+        }, 750)
+    }
 };
 
 const computedTransX = (element) => {
@@ -93,12 +124,12 @@ const linkSectionIndicator = (link) => {
         }
     }
     link.style.borderBottom = '1px solid #000'
-}
+};
 
 const modifyHeaderLogo = (wipeClass, target, addClass) => {
     if(wipeClass) headerLogoArray.forEach(i => i.classList.remove(wipeClass));
     if(addClass) target.classList.add(addClass);
-}
+};
 
 const shiftToFilm = () => {
     modifyHeaderLogo('logo-visible', headerLogoFilm, 'logo-visible');
@@ -111,7 +142,7 @@ const shiftToFilm = () => {
     shiftContent(devPortal, '-100%', '0%', 'fixed');
     shiftContent(aboutPortal, '0%', '100%', 'fixed');
     shiftContent(contactPortal, '-100%', '100%', 'fixed');
-}
+};
 
 const shiftToDev = () => {
     modifyHeaderLogo('logo-visible', headerLogoDev, 'logo-visible');
@@ -153,6 +184,7 @@ const shiftToContact = () => {
 };
 
 header.addEventListener('click', function(e){
+    if(filmLink.style.borderBottom.includes('solid')) video.pause();
     if(e.target == filmLink){
         e.preventDefault()
        if(!filmLink.style.borderBottom.includes('solid')){
@@ -190,6 +222,8 @@ flyOutMenu.addEventListener('click', function(e){
     }
     if(e.target == filmFlyOutLink){
         shiftToFilm();
+
+        console.log(window.innerWidth / 2);
         $('.flyout-menu').toggleClass('flyout-menu-out');
     }
     if(e.target == aboutFlyOutLink){
@@ -208,19 +242,20 @@ trainer.addEventListener('click', (e) => {
         console.log('ok')
         window.location.pathname = '/Multi_Game/index.html'
     }
-})
+});
 
 contactPortal.addEventListener('click', function(e){
     copyToClipboard(e.target)   
-})
+});
 
 // flyout-menu
 $('.ham-menu-click').on('click', function (){
     $('.flyout-menu').toggleClass('flyout-menu-out')
-})
+});
 
 const hiddenOnAllPortals = (except) => {
   slideShowArray.forEach(i => {
     i !== except ? i.style.overflow = 'hidden': i.style.overflow = 'initial';
   })
 };
+

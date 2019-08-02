@@ -1,3 +1,9 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+
 body {
     position: relative;
     font-family: 'Alegreya Sans', sans-serif;
@@ -22,7 +28,7 @@ a {
     transition: border .1s ease-in;
 }
 
-header nav a:hover {
+#main-nav a:hover {
     border-bottom: 1px solid #000;
 }
 
@@ -81,12 +87,12 @@ header h1 img {
 
 header h2 {
     position: absolute;
-    left: 20%;
+    left: 65px;
     display: inline-block;
     text-shadow: 1px 1px 2px rgb(66, 66, 66);
     font-weight: 700;
     font-size: 32px;
-    padding-top: 5px;
+    padding-top: 8px;
 }
 
 #main-nav {
@@ -135,8 +141,9 @@ header h2 {
 
 .flyout-menu nav a {
     display: inline-block;
-    margin-bottom: 10px;
 }
+
+
 
 .ham-menu-click {
     z-index: 100;
@@ -265,7 +272,7 @@ header h2 {
 }
 
 .video-category {
-    margin-right: 1em;
+    margin-right: 1rem;
     color: rgba(255, 255, 255, 0.74);
     cursor: pointer;
     padding-bottom: 5px;
@@ -534,6 +541,7 @@ header h2 {
     height: 615px;
     background-repeat: no-repeat;
     transition: left 1s ease-in;
+
 }
 
 #lightbox-content iframe {
@@ -639,6 +647,9 @@ footer p {
     bottom: 30%;
     float: right;
 }
+
+
+
 @media (max-height: 825px) {
     .film-portal {
         top: 50px;
@@ -655,14 +666,18 @@ footer p {
     footer img {
         display: none;
     }
-}
 
-.video-category {
-    font-size: .8rem;
-}
-
-.video-category-selected {
-    font-size: .8rem;
+    .video-category {
+        font-size: .8rem;
+    }
+    
+    .video-category-selected {
+        font-size: .9rem;
+    }
+    
+    .video-category:hover {
+        font-size: .9rem;
+    }
 }
 
 
@@ -679,7 +694,6 @@ footer p {
         margin-top: 25px;
         margin-bottom: 45px;
     }
-
 
     #film-portal-wrap {
         /* allows for full stretch of background */
@@ -742,6 +756,8 @@ footer p {
 @media (max-width: 628px) {
     
     header h2 {
+        left: 70px;
+        padding-top: 5px;
         margin-top: 1.3%;
         font-size: 1.5rem;
     }
@@ -753,10 +769,6 @@ footer p {
     #dev-portal {
         margin: 30% auto;
     }
-
-    /* #brief-bio {
-        padding: 15%;
-    } */
 
     #stack {
         margin-top: 0;
@@ -799,6 +811,10 @@ footer p {
         display: block;
     }
 
+    .video-category:hover {
+        font-size: .8rem;
+    }
+
     .slides-p {
         opacity: 1;
         color: white;
@@ -806,11 +822,11 @@ footer p {
     }
 
     #inner-about-portal {
-        transform: translateY(15%);
+        transform: translateY(15vh);
     }
 
     #inner-contact-portal {
-        transform: translateY(90%);
+        transform: translateY(30vh);
     }
 
     header nav {

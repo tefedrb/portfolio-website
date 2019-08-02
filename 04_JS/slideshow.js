@@ -16,16 +16,6 @@ const siLink = document.querySelector('#si-link');
 const editingPortal = document.querySelector('#editing-portal');
 const closeBoxElement = document.querySelector('#close-lightbox');
 
-/* const actionsForMobile = () => {
-    if(document) return;
-    if(window.innerWidth > 480) return;
-     slideShowInfo.slideshow.style.width = '100%';
-     slideShowInfo.slideshow.style.textAlign = 'center'
-     const slidesArr = Array.from(slideShowInfo.slideshow.children);
-     slidesArr.forEach(i => i.style.display = 'inline-block');
-     slidesArr.forEach(i => i.style.float = 'none');
-}; */
-
 const slideShowInfo = {
     slide: document.querySelector('#slides-RR div'),
     slideshow: document.querySelector('#slides-RR'),
@@ -48,8 +38,17 @@ const slideShowInfo = {
     }
 }
 
+
 $('a.arrow-back').addClass('displayOff')
 slideShowInfo.slideshow.style.width = `${slideShowInfo.slideShowWidth()}px`;
+
+const responsiveIframe = () => {
+    const width = Math.floor(window.innerWidth - (window.innerWidth / 6));
+    const height = Math.floor(width / 16 * 9);
+    lightBoxContent.style.width = `${width}px`;
+    lightBoxContent.style.height = `${height}px`
+    console.log(width, height, 'width & height')
+}
 
 const calPxSlideLimit = (slidesInView, marginOffSet) => {
     const slideWidth = parseInt(slideShowInfo.getSlideWidth()) + marginOffSet;
@@ -225,12 +224,15 @@ editingPortal.addEventListener('click', (e)=>{
 
     if(e.target.classList[0] === 'slides-p'){
         const dataLinkAttr = e.target.parentNode.attributes[3].textContent;
+        responsiveIframe();
         lightBoxContent.innerHTML = `<iframe width="560" height="315" src="${dataLinkAttr}" 
         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen></iframe>`;
         $('#lightbox-container').fadeIn(700);
     }
 })
+
+
 
 
 
