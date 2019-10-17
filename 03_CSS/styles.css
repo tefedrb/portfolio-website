@@ -2,8 +2,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-
 body {
     position: relative;
     font-family: 'Alegreya Sans', sans-serif;
@@ -94,7 +92,7 @@ header h2 {
     font-size: 32px;
     padding-top: 8px;
 }
-
+/* Flexbox here */
 #main-nav {
     position: absolute;
     top: 15px;
@@ -117,7 +115,7 @@ header h2 {
     transform: translateX(100%);
     height: 100vh;
     width: 100vw;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     transition: all .2s ease-in-out;  
 }
 
@@ -133,7 +131,7 @@ header h2 {
     font-size: 2rem;
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-90%);
     width: 100%;
     left: 25%;
     right: 50%;  
@@ -143,13 +141,12 @@ header h2 {
     display: inline-block;
 }
 
-
-
 .ham-menu-click {
     z-index: 100;
     display: none;
 }
 
+/* Flexbox here */
 #dev-portal-wrap {
     position: absolute;
     width: 100%;
@@ -190,6 +187,7 @@ header h2 {
     opacity: 1;
 }
 
+/* Flexbox here */
 #project-description {
     text-decoration: underline;
     font-weight: 700;
@@ -199,6 +197,7 @@ header h2 {
     padding: 4%;
 }
 
+/* Flexbox here */
 #stack {
     margin-top: 25px;
     display: inline-block;
@@ -213,6 +212,7 @@ header h2 {
     height: 100px;
 }
 
+/* Flexbox here */
 #film-portal-wrap {
     position: fixed;
     transform: translate(100%, 0%);
@@ -715,6 +715,10 @@ footer p {
         height: auto;
     }
 
+    #slideCountContainer {
+        display: none;
+    }
+
     footer {
         height: 1.4rem;
     }
@@ -723,24 +727,7 @@ footer p {
         font-size: .5rem;
     }
 
-
-    #slides-commercial {
-
-    }
-
-    #slides-NFL {
-
-    }
-
-    #slides-RR {
-
-    }
-
-    #slides-si {
-
-    }
-
-    #slideCountContainer {
+    footer img {
         display: none;
     }
 

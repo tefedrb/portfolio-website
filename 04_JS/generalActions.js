@@ -53,7 +53,6 @@ const realignWindow = (positionY, duration) => {
          //base case - compare timeElapsed to duration
         if(duration > timeElapsed) requestAnimationFrame(animation);
     };
-
     requestAnimationFrame(animation);
 };
 

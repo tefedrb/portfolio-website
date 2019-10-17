@@ -8,10 +8,10 @@ const blink = () => {
         cursor.style.color = 'white'
     }
     setTimeout(blink, 500)
-}
+};
 
 const ttyl = () => {
-    let text = `UNDER CONSTRUCTION... type findpage() into the console to see the progress`
+    let text = `UNDER CONSTRUCTION... type findPage() into the console to see the progress`
     let i = 0;
     const runme = () => {  
         document.querySelector('.text').innerHTML += text[i]
@@ -24,19 +24,19 @@ const ttyl = () => {
         } else {return blink()}
     }
     return newFunc
-}
+};
 
 const decrypt = (str) => {  
     let hold = str.split('').reverse().splice(4).reverse().join('')
     let output = ''.concat('lmth.', hold)
     return output.split('').reverse().join('')
-  }
+  };
 
 
-const findpage = () => {
+const findPage = () => {
     window.location.replace(decrypt('xxednikced'))
-}
+};
 
-const ttylGo = ttyl()
+const ttylGo = ttyl();
 
-ttylGo()
+ttylGo();
