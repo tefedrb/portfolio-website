@@ -680,7 +680,6 @@ footer p {
     }
 }
 
-
 @media (max-width: 754px) {
     header nav {
         display: none;
@@ -741,7 +740,6 @@ footer p {
 }
 
 @media (max-width: 628px) {
-    
     header h2 {
         left: 70px;
         padding-top: 5px;
@@ -828,5 +826,4 @@ footer p {
         right: 20px;
         z-index: 100;
     }   
-
 }

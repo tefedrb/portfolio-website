@@ -1,9 +1,3 @@
-/* This just gets the slide width (which might vary 
-when I add responsiveness to 
-the site */
-
-/* We are doing this because when we load the page the slideshow 
-should start at the beginning */
 const slideProgressBar = document.querySelector('#slideProgressBar');
 const lightBoxContainer = document.querySelector('#lightbox-container');
 const lightBoxContent = document.querySelector('#lightbox-content');
@@ -47,7 +41,6 @@ const responsiveIframe = () => {
     const height = Math.floor(width / 16 * 9);
     lightBoxContent.style.width = `${width}px`;
     lightBoxContent.style.height = `${height}px`
-    console.log(width, height, 'width & height')
 }
 
 const calPxSlideLimit = (slidesInView, marginOffSet) => {
@@ -126,7 +119,6 @@ const nextSlideL = function() {
 
 const exitLightBox = () => {
     $('#lightbox-container').fadeOut(500)
-    console.log('exit')
 }
 
 $('a.arrow-forward').on('click', function(e) {
@@ -163,8 +155,6 @@ editingPortal.addEventListener('click', (e)=>{
     if(e.target === commercialWorkLink){
         modifyClassList(e.target.parentNode.children, 'video-category-selected');
         modifyClassList(e.target.parentNode.children, 'video-category', 'add');
-        console.log(e.target.parentNode, 'htmllist com-work')
-        console.log(e.target, 'htmllist com-work')
         e.target.classList.remove('video-category');
         e.target.classList.add('video-category-selected');
         $('a.arrow-back').addClass('displayOff');
