@@ -119,6 +119,7 @@ const nextSlideL = function() {
 
 const exitLightBox = () => {
     $('#lightbox-container').fadeOut(500)
+    lightBoxContainer.querySelector('#lightbox-content').innerHTML = "";
 }
 
 $('a.arrow-forward').on('click', function(e) {

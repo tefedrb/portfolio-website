@@ -26,7 +26,7 @@ const video = document.querySelector('video');
 
 const copyToClipboard = (email) => {
     let tempInput = document.createElement('input');
-    tempInput.value = email.innerText
+    tempInput.value = email.innerText;
     body.appendChild(tempInput).select();
     document.execCommand('copy');
 };
@@ -61,7 +61,7 @@ const linksArray = () => {
     let returnArr = [];
     for(let i = 0; i < mainNavLinks.length; i++){
         if(mainNavLinks[i].tagName == 'A'){
-            returnArr.push(mainNavLinks[i])
+            returnArr.push(mainNavLinks[i]);
         }
     }
     return returnArr
@@ -141,6 +141,7 @@ const shiftToFilm = () => {
     shiftContent(devPortal, '-100%', '0%', 'fixed');
     shiftContent(aboutPortal, '0%', '100%', 'fixed');
     shiftContent(contactPortal, '-100%', '100%', 'fixed');
+    console.log(this.location, "MAIN")
 };
 
 const shiftToDev = () => {
@@ -154,6 +155,7 @@ const shiftToDev = () => {
     shiftContent(devPortal, '0%', '0%', 'absolute');
     shiftContent(aboutPortal, '100%', '100%', 'fixed');
     shiftContent(contactPortal, '0%', '100%', 'fixed');
+    console.log(this.location, "MAIN")
 };
 
 const shiftToAbout = () => {
@@ -167,6 +169,7 @@ const shiftToAbout = () => {
     shiftContent(devPortal, '-100%', '-100%', 'fixed');
     shiftContent(aboutPortal, '0%', '0%', 'absolute');
     shiftContent(contactPortal, '-100%', '0%', 'fixed');
+    console.log(this.location, "MAIN")
 };
 
 const shiftToContact = () => {
@@ -180,12 +183,12 @@ const shiftToContact = () => {
     shiftContent(devPortal, '0%', '-100%', 'fixed');
     shiftContent(aboutPortal, '100%', '0%', 'fixed');
     shiftContent(contactPortal, '0%', '0%', 'absolute');
+    console.log(this.location, "MAIN")
 };
 
 header.addEventListener('click', function(e){
     if(filmLink.style.borderBottom.includes('solid')) video.pause();
     if(e.target == filmLink){
-        e.preventDefault()
        if(!filmLink.style.borderBottom.includes('solid')){
             shiftToFilm(filmLink);
             linkSectionIndicator(filmLink);
@@ -233,19 +236,25 @@ flyOutMenu.addEventListener('click', function(e){
         shiftToContact();
         $('.flyout-menu').toggleClass('flyout-menu-out');
     }
-});
-
+})
 
 trainer.addEventListener('click', (e) => {
     if(e.target == trainer){
-        console.log('ok')
-        window.location.pathname = '/Multi_Game/index.html'
+        console.log('ok');
+        window.location.pathname = '/Multi_Game/index.html';
     }
-});
+})
 
 contactPortal.addEventListener('click', function(e){
-    copyToClipboard(e.target)   
-});
+    copyToClipboard(e.target);   
+})
+
+// window.onhashchange = function() { 
+//     if(this.location.hash == "film"){
+//         console.log(this.location, "<-- loc");
+//         shiftToFilm();
+//     }
+// }
 
 // flyout-menu
 $('.ham-menu-click').on('click', function (){
@@ -258,3 +267,33 @@ const hiddenOnAllPortals = (except) => {
   })
 };
 
+// And if the shiftToFilm conditions aren't already
+// fulfilled. 
+/* Also need to package a shift with underline
+under navigation switching. */
+// if(window.location.hash == "#film"){
+//     shiftToFilm();
+// }
+
+// 10/24/19
+// I want to make sure that each isn't being called more than once
+// I'll need to add console.logs into each of the functions in shift and also 
+// In the header event listener
+window.addEventListener('hashchange', function(){
+    if(this.location.hash == "#film"){
+        console.log(this.location, "<-- loc");
+        shiftToFilm();
+    }
+    if(this.location.hash == "#about"){
+        console.log(this.location, "<-- loc")
+        shiftToAbout();
+    }
+    if(this.location.hash == "#contact"){
+        console.log(this.location, "<-- loc")
+        shiftToContact();
+    }
+    if(this.location.hash == "#dev"){
+        console.log(this.location, "<-- loc")
+        shiftToDev();
+    }
+})
