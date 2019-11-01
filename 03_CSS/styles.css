@@ -158,13 +158,15 @@ header h2 {
 }
 
 #dev-portal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 25px;
     color: black;
-    max-width: 800px;
     height: 100%;
-    justify-content: center;
+    /* justify-content: center; */
     text-align: center;
-    margin: 140px auto;   
+    margin: 140px 140px;   
 }
 
 #dev-portal p {
@@ -175,6 +177,13 @@ header h2 {
     margin-top: 2%;
 }
 
+#projects {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+/* 
 #trainer-img {
     cursor: pointer;
     opacity: .8;
@@ -185,16 +194,27 @@ header h2 {
 
 #trainer-img:hover {
     opacity: 1;
-}
+} */
 
 /* Flexbox here */
-#project-description {
+.project-description {
     text-decoration: underline;
     font-weight: 700;
     font-size: 20px;
     margin-top: 25px;
     margin-bottom: 10px;
     padding: 4%;
+}
+
+#projects img {
+    cursor: pointer;
+    opacity: .8;
+    max-width: 500px;
+    transition: all .2s ease-in-out;
+}
+
+#projects img:hover {
+    opacity:1 ;
 }
 
 /* Flexbox here */
@@ -573,7 +593,7 @@ header h2 {
     max-width: 500px;
     padding: 25px;
     margin: 0 auto;
-    transform: translateY(100%);
+    transform: translateY(32vh);
 }
 
 
@@ -598,7 +618,7 @@ header h2 {
     height: auto;
     padding: 25px;
     margin: 0 auto;
-    transform: translateY(200%);
+    transform: translateY(35vh);
 }
 
 #inner-contact-portal img {

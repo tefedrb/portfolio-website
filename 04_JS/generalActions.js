@@ -15,6 +15,9 @@ const aboutPortal = document.querySelector('#about-portal');
 const contactPortal = document.querySelector('#contact-portal');
 const footer = document.querySelector('footer');
 const trainer = document.querySelector('#trainer-img');
+const quadSquad = document.querySelector('#proj2');
+const project1 = document.querySelector('#proj1');
+const project2 = document.querySelector('#proj2');
 const email = document.querySelector('#email');
 const headerLogoArray = Array.from(document.querySelector('header h1').children);
 const headerLogoDev = document.querySelector('#logo-dev');
@@ -68,7 +71,7 @@ const linksArray = () => {
 };
 
 const shiftContent = (element, transX, transY, position) => {
-    realignWindow(0, 500)
+    realignWindow(0, 500);
     setTimeout(function(){
         let translate = `translateX(${transX})`;
     if(transY && transX){
@@ -186,36 +189,40 @@ const shiftToContact = () => {
     console.log(this.location, "MAIN")
 };
 
-header.addEventListener('click', function(e){
+const handleLinking = (e) => {
     if(filmLink.style.borderBottom.includes('solid')) video.pause();
-    if(e.target == filmLink){
+    if(e.target == filmLink || this.location.hash == "#film"){
        if(!filmLink.style.borderBottom.includes('solid')){
             shiftToFilm(filmLink);
             linkSectionIndicator(filmLink);
         }
     }
-    if(e.target == devLink){
+    // Adding an or statement here to have the anchors present
+    if(e.target == devLink || this.location.hash == "#dev"){
         e.preventDefault()
         if(!devLink.style.borderBottom.includes('solid')){
             shiftToDev(devLink);
             linkSectionIndicator(devLink);
         }
     }
-    if(e.target == aboutLink){
+    if(e.target == aboutLink || this.location.hash == "#about"){
         e.preventDefault()
         if(!aboutLink.style.borderBottom.includes('solid')){
             shiftToAbout(aboutLink);
             linkSectionIndicator(aboutLink);
         }
     }
-    if(e.target == contactLink){
+    if(e.target == contactLink || this.location.hash == "#contact"){
         e.preventDefault()
         if(!contactLink.style.borderBottom.includes('solid')){
             shiftToContact(contactLink);
             linkSectionIndicator(contactLink);
         }
     }
-});
+}
+
+window.addEventListener('hashchange', handleLinking);
+header.addEventListener('click', handleLinking);
 
 flyOutMenu.addEventListener('click', function(e){
     if(e.target == devFlyOutLink){
@@ -238,10 +245,18 @@ flyOutMenu.addEventListener('click', function(e){
     }
 })
 
-trainer.addEventListener('click', (e) => {
+devPortal.addEventListener('click', (e) => {
     if(e.target == trainer){
-        console.log('ok');
+        console.log(e.target)
         window.location.pathname = '/Multi_Game/index.html';
+    }
+    if(e.target == quadSquad){
+        console.log(e.target)
+        window.location.pathname = '/Quad_Squad/index.html';
+    }
+    if(e.target == project2){
+        console.log(e.target)
+        window.location.pathname = '/Project2/index.html';
     }
 })
 
@@ -249,12 +264,6 @@ contactPortal.addEventListener('click', function(e){
     copyToClipboard(e.target);   
 })
 
-// window.onhashchange = function() { 
-//     if(this.location.hash == "film"){
-//         console.log(this.location, "<-- loc");
-//         shiftToFilm();
-//     }
-// }
 
 // flyout-menu
 $('.ham-menu-click').on('click', function (){
@@ -279,21 +288,7 @@ under navigation switching. */
 // I want to make sure that each isn't being called more than once
 // I'll need to add console.logs into each of the functions in shift and also 
 // In the header event listener
-window.addEventListener('hashchange', function(){
-    if(this.location.hash == "#film"){
-        console.log(this.location, "<-- loc");
-        shiftToFilm();
-    }
-    if(this.location.hash == "#about"){
-        console.log(this.location, "<-- loc")
-        shiftToAbout();
-    }
-    if(this.location.hash == "#contact"){
-        console.log(this.location, "<-- loc")
-        shiftToContact();
-    }
-    if(this.location.hash == "#dev"){
-        console.log(this.location, "<-- loc")
-        shiftToDev();
-    }
-})
+
+// Take a picture of your harddrives and add to your about me section. 
+// Add Technologies.
+
