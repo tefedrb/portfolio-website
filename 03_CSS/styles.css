@@ -105,6 +105,15 @@ header h2 {
     font-size: 15px;
 }
 
+#git-linkedin {
+    margin-top: 10px;
+    width:100%;
+}
+
+#git-linkedin img {
+    width: 30px;
+}
+
 /* FLYOUT MENU IN PROGRESS */
 
 .flyout-menu {
@@ -150,10 +159,6 @@ header h2 {
 #dev-portal-wrap {
     position: absolute;
     width: 100%;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
     transition: all .5s ease-in-out;
 }
 
@@ -164,7 +169,7 @@ header h2 {
     font-size: 25px;
     color: black;
     height: 100%;
-    /* justify-content: center; */
+    justify-content: center;
     text-align: center;
     margin: 140px 140px;   
 }
@@ -179,9 +184,17 @@ header h2 {
 
 #projects {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
+    margin-top: 1.5em;
+    max-width: 900px;
+    box-shadow: 1px 2px 8px 2px #888888;
+}
+
+#projects li {
+    width: 300px;
+    border: 1px black solid;
 }
 /* 
 #trainer-img {
@@ -197,40 +210,40 @@ header h2 {
 } */
 
 /* Flexbox here */
-.project-description {
+.project-name {
     text-decoration: underline;
     font-weight: 700;
     font-size: 20px;
-    margin-top: 25px;
-    margin-bottom: 10px;
     padding: 4%;
+}
+
+.project-description {
+    position: relative;
+    transition: opacity .8s ease;
+}
+
+.project-description span {
+    position: absolute;
+    opacity: 0;
+    top: 25%;
+    width: 100%;
+    font-size: .8em;
+}
+
+.project-description:hover span {
+    opacity: 1;
+}
+
+.project-description:hover img {
+    opacity: .2;
 }
 
 #projects img {
     cursor: pointer;
-    opacity: .8;
-    max-width: 500px;
     transition: all .2s ease-in-out;
 }
 
-#projects img:hover {
-    opacity:1 ;
-}
-
 /* Flexbox here */
-#stack {
-    margin-top: 25px;
-    display: inline-block;
-    text-align: center;
-    max-height: 200px;
-    max-width: 500px;
-}
-
-#stack img {
-    max-width: 100px;
-    padding: 20px;
-    height: 100px;
-}
 
 /* Flexbox here */
 #film-portal-wrap {
@@ -264,6 +277,12 @@ header h2 {
     transform: translateY(25px);
 }
 
+#film-portal-description {
+    margin-top: 20px;
+    text-align: center;
+    color: gold;
+    font-size: 1.5em;
+}
 
 #video-intro {
     padding: 5px;
@@ -312,6 +331,7 @@ header h2 {
 }
 
 #slideshow {
+    display: block;
     overflow: hidden;
     height: auto;
     max-width: 1250px;
@@ -575,32 +595,45 @@ header h2 {
 #about-portal {
     position: fixed;
     opacity: 0;
-    overflow-x: hidden;
-    /* background-color: "#898B3B"; */
-    transform: translate(100%, 100%);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
+    overflow-x: hidden;
+    transform: translate(100%, 100%);
+    text-align: center;
     transition: all .5s ease-in-out; 
 } 
 
+#stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    max-width: 500px;
+}
+
+#stack img {
+    object-fit: contain;
+    max-width: 150px;
+    padding: 20px;
+    height: 100px;
+}
+
+
 #inner-about-portal {
+    margin-top: 50px;
     display: inline-block;
     max-width: 500px;
     padding: 25px;
-    margin: 0 auto;
-    transform: translateY(32vh);
+    margin-bottom: 25px;
 }
-
 
 #contact-portal {
     position: fixed;
     opacity: 0;
-    /* background-color: "#CA9947"; */
     overflow-x: hidden;
     transform: translate(0%, 100%);
     text-align: center;
@@ -697,6 +730,31 @@ footer p {
     
     .video-category:hover {
         font-size: .9rem;
+    }
+}
+
+@media (max-height: 800px){
+    #stack {
+        flex-wrap: none;
+        max-width: 100%;
+    }
+
+    #inner-about-portal{
+        margin-top: 25px;
+    }
+}
+
+@media (max-height: 600px){
+    #stack img {
+        padding: 5px;
+        height: 50px;
+        max-width: 90px
+    }
+}
+
+@media (max-width: 895px){
+    #projects li {
+        width: 100%;
     }
 }
 

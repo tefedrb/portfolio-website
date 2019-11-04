@@ -27,6 +27,12 @@ const headerLogoContact = document.querySelector('#logo-contact');
 const slideShowArray = Array.from(document.querySelector('#slideshow').children);
 const video = document.querySelector('video');
 
+const condenseHeader = () => {
+    window.setTimeout(function(){
+        
+    })
+}
+
 const copyToClipboard = (email) => {
     let tempInput = document.createElement('input');
     tempInput.value = email.innerText;
