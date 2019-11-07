@@ -173,7 +173,7 @@ const shiftToAbout = () => {
     filmPortal.style.opacity = '0';
     aboutPortal.style.opacity = '1';
     contactPortal.style.opacity = '0';
-    aboutPortal.style.backgroundColor = "#898B3B";
+    // aboutPortal.style.backgroundColor = "#898B3B";
     shiftContent(filmPortal, '0%', '-100%', 'fixed');
     shiftContent(devPortal, '-100%', '-100%', 'fixed');
     shiftContent(aboutPortal, '0%', '0%', 'absolute');
