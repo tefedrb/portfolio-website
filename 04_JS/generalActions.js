@@ -25,7 +25,9 @@ const headerLogoFilm = document.querySelector('#logo-film');
 const headerLogoAbout = document.querySelector('#logo-about');
 const headerLogoContact = document.querySelector('#logo-contact');
 const slideShowArray = Array.from(document.querySelector('#slideshow').children);
-const video = document.querySelector('video');
+const filmVidAll = Array.from(filmPortal.querySelectorAll('video'));
+const filmVidBg = filmPortal.querySelector('#film-video-bg');
+
 
 const condenseHeader = () => {
     window.setTimeout(function(){
@@ -33,12 +35,12 @@ const condenseHeader = () => {
     })
 }
 
-const copyToClipboard = (email) => {
-    let tempInput = document.createElement('input');
-    tempInput.value = email.innerText;
-    body.appendChild(tempInput).select();
-    document.execCommand('copy');
-};
+// const copyToClipboard = (email) => {
+//     let tempInput = document.createElement('input');
+//     tempInput.value = email.innerText;
+//     body.appendChild(tempInput).select();
+//     document.execCommand('copy');
+// };
 
 const realignWindow = (positionY, duration) => {
     // Thanks to gizma.com/easing formulas and Dev Ed (youtube channel) for inspiring this function
@@ -139,13 +141,31 @@ const modifyHeaderLogo = (wipeClass, target, addClass) => {
     if(addClass) target.classList.add(addClass);
 };
 
+const portalOpacityAndVid = (portal) => {
+    portal === "devPortal" ? devPortal.style.opacity = '1' : 
+    devPortal.style.opacity = '0';
+    if(portal == "filmPortal"){
+        filmPortal.style.opacity = '1';
+        setTimeout(function(){
+            filmPortal.querySelector('#film-video-bg').style.opacity = '1';
+            filmVidBg.play();
+        }, 500)
+    } else {
+        filmPortal.style.opacity = '0';
+        setTimeout(function(){
+            filmPortal.querySelector('#film-video-bg').style.opacity = '0';
+            filmVidAll.forEach(vid => vid.pause());
+        }, 500)
+    }
+    portal === "aboutPortal" ? aboutPortal.style.opacity = '1' : 
+    aboutPortal.style.opacity = '0'; 
+    portal === "contactPortal" ? contactPortal.style.opacity = '1':
+    contactPortal.style.opacity = '0';
+}
+
 const shiftToFilm = () => {
     modifyHeaderLogo('logo-visible', headerLogoFilm, 'logo-visible');
-    devPortal.style.opacity = '0';
-    filmPortal.style.opacity = '1';
-    aboutPortal.style.opacity = '0';
-    contactPortal.style.opacity = '0';
-    filmPortal.style.backgroundColor = 'black';
+    portalOpacityAndVid("filmPortal");
     shiftContent(filmPortal, '0%', '0%', 'absolute');
     shiftContent(devPortal, '-100%', '0%', 'fixed');
     shiftContent(aboutPortal, '0%', '100%', 'fixed');
@@ -155,24 +175,17 @@ const shiftToFilm = () => {
 
 const shiftToDev = () => {
     modifyHeaderLogo('logo-visible', headerLogoDev, 'logo-visible');
-    devPortal.style.opacity = '1';
-    filmPortal.style.opacity = '0';
-    aboutPortal.style.opacity = '0';
-    contactPortal.style.opacity = '0';
-    devLink.style.backgroundColor = 'white';
+    portalOpacityAndVid("devPortal");
     shiftContent(filmPortal, '100%', '0%', 'fixed');
     shiftContent(devPortal, '0%', '0%', 'absolute');
     shiftContent(aboutPortal, '100%', '100%', 'fixed');
     shiftContent(contactPortal, '0%', '100%', 'fixed');
-    console.log(this.location, "MAIN")
+    console.log("YEAHHHHH")
 };
 
 const shiftToAbout = () => {
     modifyHeaderLogo('logo-visible', headerLogoAbout, 'logo-visible');
-    devPortal.style.opacity = '0';
-    filmPortal.style.opacity = '0';
-    aboutPortal.style.opacity = '1';
-    contactPortal.style.opacity = '0';
+    portalOpacityAndVid("aboutPortal");
     // aboutPortal.style.backgroundColor = "#898B3B";
     shiftContent(filmPortal, '0%', '-100%', 'fixed');
     shiftContent(devPortal, '-100%', '-100%', 'fixed');
@@ -183,11 +196,7 @@ const shiftToAbout = () => {
 
 const shiftToContact = () => {
     modifyHeaderLogo('logo-visible', headerLogoContact, 'logo-visible');
-    devPortal.style.opacity = '0';
-    filmPortal.style.opacity = '0';
-    aboutPortal.style.opacity = '0';
-    contactPortal.style.opacity = '1';
-    contactPortal.style.backgroundColor = "#CA9947";
+    portalOpacityAndVid("contactPortal");
     shiftContent(filmPortal, '100%', '-100%', 'fixed');
     shiftContent(devPortal, '0%', '-100%', 'fixed');
     shiftContent(aboutPortal, '100%', '0%', 'fixed');
@@ -196,30 +205,29 @@ const shiftToContact = () => {
 };
 
 const handleLinking = (e) => {
-    if(filmLink.style.borderBottom.includes('solid')) video.pause();
-    if(e.target == filmLink || this.location.hash == "#film"){
+    if(e.target == filmLink || this.location.hash == "#film-portal"){
        if(!filmLink.style.borderBottom.includes('solid')){
             shiftToFilm(filmLink);
             linkSectionIndicator(filmLink);
         }
     }
     // Adding an or statement here to have the anchors present
-    if(e.target == devLink || this.location.hash == "#dev"){
-        e.preventDefault()
+    if(e.target == devLink || this.location.hash == "#dev-portal"){
+        // e.preventDefault()
         if(!devLink.style.borderBottom.includes('solid')){
             shiftToDev(devLink);
             linkSectionIndicator(devLink);
         }
     }
-    if(e.target == aboutLink || this.location.hash == "#about"){
-        e.preventDefault()
+    if(e.target == aboutLink || this.location.hash == "#about-portal"){
+        // e.preventDefault()
         if(!aboutLink.style.borderBottom.includes('solid')){
             shiftToAbout(aboutLink);
             linkSectionIndicator(aboutLink);
         }
     }
-    if(e.target == contactLink || this.location.hash == "#contact"){
-        e.preventDefault()
+    if(e.target == contactLink || this.location.hash == "#contact-portal"){
+        // e.preventDefault()
         if(!contactLink.style.borderBottom.includes('solid')){
             shiftToContact(contactLink);
             linkSectionIndicator(contactLink);
@@ -237,8 +245,6 @@ flyOutMenu.addEventListener('click', function(e){
     }
     if(e.target == filmFlyOutLink){
         shiftToFilm();
-
-        console.log(window.innerWidth / 2);
         $('.flyout-menu').toggleClass('flyout-menu-out');
     }
     if(e.target == aboutFlyOutLink){
@@ -266,10 +272,9 @@ devPortal.addEventListener('click', (e) => {
     }
 })
 
-contactPortal.addEventListener('click', function(e){
-    copyToClipboard(e.target);   
-})
-
+// contactPortal.addEventListener('click', function(e){
+//     copyToClipboard(e.target);   
+// })
 
 // flyout-menu
 $('.ham-menu-click').on('click', function (){
@@ -282,19 +287,4 @@ const hiddenOnAllPortals = (except) => {
   })
 };
 
-// And if the shiftToFilm conditions aren't already
-// fulfilled. 
-/* Also need to package a shift with underline
-under navigation switching. */
-// if(window.location.hash == "#film"){
-//     shiftToFilm();
-// }
-
-// 10/24/19
-// I want to make sure that each isn't being called more than once
-// I'll need to add console.logs into each of the functions in shift and also 
-// In the header event listener
-
-// Take a picture of your harddrives and add to your about me section. 
-// Add Technologies.
 

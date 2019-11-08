@@ -20,10 +20,10 @@
             </h1>
             <h2>Tefé Del Rosario-Bell</h2>
             <nav id="main-nav">
-                <a class="development video main-nav-a" href="#dev">Development</a>              
-                <a class="filmmaking video main-nav-a" href="#film">Filmmaking</a>
-                <a class="about-link main-nav-a" href="#about">About</a>
-                <a class="contact-link main-nav-a" href="#contact">Contact</a>
+                <a class="development video main-nav-a" href="#dev-portal">Development</a>              
+                <a class="filmmaking video main-nav-a" href="#film-portal">Filmmaking</a>
+                <a class="about-link main-nav-a" href="#about-portal">About</a>
+                <a class="contact-link main-nav-a" href="#contact-portal">Contact</a>
             </nav>
             <a href="#" class="ham-menu-click"> 
                 <img src="01_IMAGES/Other_gfx/menu-icon.svg">
@@ -39,7 +39,6 @@
         </header>
 
         <section id="dev-portal-wrap">
-            <a name="dev"></a>
             <div id="dev-portal">
                 <h3>A Software Developer</h3>
                 <p id="brief-bio">
@@ -60,7 +59,12 @@
                         <p class="project-name">Multiplication Trainer</p>
                         <div class="project-description">
                             <span>My first HTML / CSS / Javascript project.</span>
-                            <img id="trainer-img" src="01_IMAGES/Body_gfx/multi-trainer-small.png" alt="multiplication trainer">
+
+                            <a href="https://www.github.com/tefedrb">
+                                <img src="https://img.icons8.com/windows/50/000000/github.png">
+                            </a>
+
+                            <img class="project-img" src="01_IMAGES/Body_gfx/multi-trainer-small.png" alt="multiplication trainer">
                         </div>
                     </li>
                     <li>
@@ -71,7 +75,7 @@
                                 <br />
                                 Back-end built with The Spring Framework (Java).
                             </span>
-                            <img id="proj2" src="01_IMAGES/Body_gfx/Api-backend.png">
+                            <img id="project-img" src="01_IMAGES/Body_gfx/Api-backend.png">
                         </div>
                     </li>
                     <li>
@@ -82,7 +86,7 @@
                                 <br />
                                 Integrated with an API.
                             </span>
-                            <img id="proj1" src="01_IMAGES/Body_gfx/travel-buddy.png">
+                            <img id="project-img" src="01_IMAGES/Body_gfx/travel-buddy.png">
                         </div>
                     </li>
 
@@ -90,7 +94,7 @@
                         <p class="project-name">Multiplication Trainer</p>
                         <div class="project-description">
                             <span>My first HTML / CSS / Javascript project.</span>
-                            <img id="trainer-img" src="01_IMAGES/Body_gfx/multi-trainer-small.png" alt="multiplication trainer">
+                            <img id="project-img" src="01_IMAGES/Body_gfx/multi-trainer-small.png" alt="multiplication trainer">
                         </div>
                     </li>
                     <li>
@@ -120,16 +124,18 @@
         </section>
 
         <section id="film-portal-wrap">
+                <video autoplay muted loop id="film-video-bg">
+                        <source src="02_VIDEO/Burn_1.mp4" type="video/mp4">
+                    </video>
             <div id="film-portal">
                 <p id="film-portal-description">
                     My filmmaking portfolio is here for reference 
                 </p>
                 <div id="video-intro">
                     <p id="video-label">Producer/Shooter/Editor Showreel 2016</p>
-                    <video src="02_VIDEO/Showreel_2016.mp4" alt="Tefe's Reel" controls poster="01_IMAGES/Other_gfx/show-reel-2016.png"></video>
+                    <video src="02_VIDEO/Showreel_2016.mp4" alt="Tefe's Reel" controls poster="01_IMAGES/Other_gfx/show-reel-2016.png" id="showreel"></video>
                 </div>
                 <div id="editing-portal">
-                        <a name="film"></a>
                         <h2> Editing Portfolio</h2>
                         <div id="editor-profile-links">
                             <a id="rr-link" class="video-category-selected">Mass Appeal: Rhythm Roulette</a>
@@ -238,7 +244,6 @@
         </div>
 
         <section id="about-portal">
-            <a name="about"></a>
             <div id="inner-about-portal">
                 <p>
                     I am currently in a 12-week software immersive program sponsored by American Express.
@@ -272,19 +277,30 @@
         </section>
 
         <section id="contact-portal">
-                <a name="contact"></a>
-                <video autoplay muted loop id="contact-video">
-                    <source src="02_VIDEO/Insta_Dilla_Timelapse.mp4" type="video/mp4">
-                </video>
             <div id="inner-contact-portal">  
-                <p id="email">
-                    tefebell@gmail.com
-                </p>
-                (click email to copy)
-                <p>  
-                    <img src="01_IMAGES/Other_gfx/LinkedIn.png">
-                    <a href="https://www.linkedin.com/in/tefedrb" target="blank">linkedin.com/tefedrb</a>
-                </p>
+                <h1>Reach Out</h1>
+                <div id="contact-form-wrap">
+                    <form id="contact-form" method="post" action="mailto:tefebell@gmail.com" enctype="text/plain">
+                        <input name="name" type="text" class="form-control" placeholder="Who is this?" required>
+                        <br />
+                        <input name="email" type="text" class="form-control" placeholder="Email" required>
+                        <br />
+                        <textarea name="message" class="form-control" rows="4" placeholder="Message..." required>
+                        </textarea>
+                        <br />
+                        <input type="submit" class="form-control submit" value="SEND MESSAGE">
+                    </form>
+                </div>
+                <div id="contact-info">
+                    <p id="email">
+                        <img src="01_IMAGES/Other_gfx/gmail.png">
+                        tefebell@gmail.com
+                    </p>
+                    <p>  
+                        <img src="01_IMAGES/Other_gfx/LinkedIn.png">
+                        <a href="https://www.linkedin.com/in/tefedrb" target="blank">linkedin.com/tefedrb</a>
+                    </p>
+                </div>
             </div>
         </section>
 

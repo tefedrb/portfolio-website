@@ -222,6 +222,7 @@ header h2 {
     transition: opacity .8s ease;
 }
 
+
 .project-description span {
     position: absolute;
     opacity: 0;
@@ -230,15 +231,26 @@ header h2 {
     font-size: .8em;
 }
 
+.project-description a {
+    opacity: 0;
+    position: absolute;
+    top: 65%;
+    left: 41%;
+}
+
 .project-description:hover span {
     opacity: 1;
 }
 
-.project-description:hover img {
+.project-description:hover .project-img {
     opacity: .2;
 }
 
-#projects img {
+.project-description:hover a {
+    opacity: 1;
+}
+
+.project-img {
     cursor: pointer;
     transition: all .2s ease-in-out;
 }
@@ -261,6 +273,17 @@ header h2 {
     padding-top: 4%;
     margin: 0 auto;
     transition: all .5s ease-in-out;  
+}
+
+#film-video-bg {
+    opacity: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    transition: all .5s ease-in-out; 
 }
 
 #film-portal {
@@ -610,8 +633,8 @@ header h2 {
 } 
 
 #stack {
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 2px 2px 10px 10px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 2px 2px 10px 10px rgba(255, 255, 255, 0.7);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -633,13 +656,14 @@ header h2 {
     max-width: 500px;
     padding: 25px;
     margin-bottom: 25px;
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 2px 2px 10px 10px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 2px 2px 10px 10px rgba(255, 255, 255, 0.7);
 }
 
 #contact-portal {
     position: fixed;
     display: flex;
+    background-color: "#CA9947";
     flex-direction: column;
     justify-content: center;
     opacity: 0;
@@ -654,14 +678,6 @@ header h2 {
     transition: all .5s ease-in-out; 
 } 
 
-#contact-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-}
-
 #inner-contact-portal {
     /* position: fixed; */
     display: flex;
@@ -675,9 +691,15 @@ header h2 {
     z-index: 2;
 }
 
+#inner-contact-portal h1 {
+    color: black;
+    font-size: 32px;
+    margin-bottom: 2em;
+}
+
 #inner-contact-portal img {
     display: inline-block;
-    width: 6%;
+    width: 10%;
     margin-right: 1%;
 }
 
@@ -685,10 +707,54 @@ header h2 {
     margin-top: 5%;
 }
 
+#contact-form-wrap {
+    border: solid black;
+    padding: 25px;
+}
+
+form {
+    color: black;
+    transition: all 4s ease-in-out;
+}
+
+form .submit{
+    background: #ff5722;
+    /* border-color: transparent; */
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 50px;
+    cursor: pointer;
+}
+
+form .submit:hover {
+    background: #ff2622;
+}
+
+.form-control {
+    /* border: none; */
+    outline: none;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+#contact-info {
+    display: flex;
+}
+
+textarea {
+    max-width: 450px;
+    max-height: 150px;
+    min-width: 400px;
+    min-height: 100px;
+}
+
+
 #email {
     font-style: bold;
     color: black;
-    font-size: 1.5rem;
 }
 
 #email:hover {
@@ -768,6 +834,15 @@ footer p {
         padding: 5px;
         height: 50px;
         max-width: 90px
+    }
+}
+
+@media (max-width: 1194px){
+    #projects {
+        max-width: 600px;
+    }
+    #brief-bio {
+        max-width: 600px;
     }
 }
 
