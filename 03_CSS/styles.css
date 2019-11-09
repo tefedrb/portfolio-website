@@ -193,21 +193,10 @@ header h2 {
 }
 
 #projects li {
+    position: relative;
     width: 300px;
     border: 1px black solid;
 }
-/* 
-#trainer-img {
-    cursor: pointer;
-    opacity: .8;
-    max-width: 500px;
-    border-radius: 7%;
-    transition: all .2s ease-in-out;
-}
-
-#trainer-img:hover {
-    opacity: 1;
-} */
 
 /* Flexbox here */
 .project-name {
@@ -218,41 +207,56 @@ header h2 {
 }
 
 .project-description {
-    position: relative;
-    transition: opacity .8s ease;
+    position: absolute;
+    font-size: .8em;
+    background-color: #e3e3e3bb;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: all .6s ease;
 }
-
 
 .project-description span {
-    position: absolute;
-    opacity: 0;
-    top: 25%;
     width: 100%;
+    margin-top: 10%;
     font-size: .8em;
+    cursor: pointer;
+    transition: all .2s ease;
 }
 
-.project-description a {
+.project-description span:hover {
+    font-size: .85em;
+    margin-top: 9%;
+}
+
+.project-description img:hover {
+    opacity: .6;
+}
+
+/* .project-description a {
     opacity: 0;
     position: absolute;
     top: 65%;
     left: 41%;
-}
+} */
 
-.project-description:hover span {
-    opacity: 1;
-}
-
-.project-description:hover .project-img {
-    opacity: .2;
-}
-
-.project-description:hover a {
+.project-description:hover {
     opacity: 1;
 }
 
 .project-img {
     cursor: pointer;
     transition: all .2s ease-in-out;
+}
+
+.inner-project {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Flexbox here */

@@ -17,7 +17,7 @@ const footer = document.querySelector('footer');
 const trainer = document.querySelector('#trainer-img');
 const quadSquad = document.querySelector('#proj2');
 const project1 = document.querySelector('#proj1');
-const project2 = document.querySelector('#proj2');
+const project2 = document.querySelector('#travel-buddy');
 const email = document.querySelector('#email');
 const headerLogoArray = Array.from(document.querySelector('header h1').children);
 const headerLogoDev = document.querySelector('#logo-dev');
@@ -266,9 +266,9 @@ devPortal.addEventListener('click', (e) => {
         console.log(e.target)
         window.location.pathname = '/Quad_Squad/index.html';
     }
-    if(e.target == project2){
+    if(e.target == travelBuddy){
         console.log(e.target)
-        window.location.pathname = '/Project2/index.html';
+        window.location.pathname = '/Travel_Buddy/index.html';
     }
 })
 
@@ -286,5 +286,16 @@ const hiddenOnAllPortals = (except) => {
     i !== except ? i.style.overflow = 'hidden': i.style.overflow = 'initial';
   })
 };
+
+
+// const sendMail = await fetch ('php/mail.php', {
+//     method: 'POST',
+//     body: JSON.stringify()
+// }) 
+
+const sendMail2 = (e) => {
+    e.preventDefault();
+    console.log(e, 'well...')
+}
 
 
